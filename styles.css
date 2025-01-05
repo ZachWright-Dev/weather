@@ -94,4 +94,11 @@ body {
     font-size: 28px;
     margin-top: -6px;
 }
-/* https://api.openweathermap.org/data/2.5/weather?q=miramar&appid=eed54e9d5336af0bb6009e9388572dda */
+
+.weather {
+    display: none;
+}
+
+.error {
+    display: none;
+}
