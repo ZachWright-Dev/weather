@@ -1,5 +1,5 @@
 const apiKey = "eed54e9d5336af0bb6009e9388572dda"
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=metric"
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?&units=imperial"
 
 async function checkWeather(city){
     const response = await fetch(apiUrl + `&q=${city}` + `&appid=${apiKey}`)
@@ -11,10 +11,11 @@ async function checkWeather(city){
     } else {
         
         const data = await response.json()
+        console.log(data)
         document.querySelector(".city").innerHTML = data.name
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%"
-        document.querySelector(".wind").innerHTML = data.wind.speed + " km/hr"
-        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c"
+        document.querySelector(".wind").innerHTML = data.wind.speed + " mi/hr"
+        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°F"
 
         document.querySelector('.weather').style.display = 'block'
         document.querySelector('.error').style.display = 'none'
